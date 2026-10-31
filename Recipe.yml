@@ -1,0 +1,23 @@
+```yaml
+name: dna0s
+description: DNA0S - gaming OS with double-click Windows app support
+base-image: ghcr.io/ublue-os/bazzite
+image-version: latest
+
+modules:
+- type: dnf
+install:
+packages:
+- wine
+- winetricks
+- cabextract
+
+- type: files
+files:
+- source: system
+destination: /
+
+- type: script
+scripts:
+- setup-dna0s.sh
+```
